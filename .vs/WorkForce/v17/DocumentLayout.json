@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Z_GIT\\HispanoBuilder\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{10ABDE6B-FD12-49EF-B9AB-F02D2B832CFE}|WorkForce.WEB\\WorkForce.WEB.csproj|e:\\z_git\\hispanobuilder\\workforce.web\\pages\\employer\\employer.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{10ABDE6B-FD12-49EF-B9AB-F02D2B832CFE}|WorkForce.WEB\\WorkForce.WEB.csproj|solutionrelative:workforce.web\\pages\\employer\\employer.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Employer.razor",
+              "DocumentMoniker": "E:\\Z_GIT\\HispanoBuilder\\WorkForce.WEB\\Pages\\Employer\\Employer.razor",
+              "RelativeDocumentMoniker": "WorkForce.WEB\\Pages\\Employer\\Employer.razor",
+              "ToolTip": "E:\\Z_GIT\\HispanoBuilder\\WorkForce.WEB\\Pages\\Employer\\Employer.razor",
+              "RelativeToolTip": "WorkForce.WEB\\Pages\\Employer\\Employer.razor",
+              "ViewState": "AgIAACgAAAAAAAAAAAAQwE4AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-30T17:37:22.711Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

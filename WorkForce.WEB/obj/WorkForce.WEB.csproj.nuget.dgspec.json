@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ProjectsNet9\\WorkForce\\WorkForce.WEB\\WorkForce.WEB.csproj": {}
+    "E:\\Z_GIT\\HispanoBuilder\\WorkForce.WEB\\WorkForce.WEB.csproj": {}
   },
   "projects": {
-    "C:\\ProjectsNet9\\WorkForce\\WorkForce.WEB\\WorkForce.WEB.csproj": {
+    "E:\\Z_GIT\\HispanoBuilder\\WorkForce.WEB\\WorkForce.WEB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProjectsNet9\\WorkForce\\WorkForce.WEB\\WorkForce.WEB.csproj",
+        "projectUniqueName": "E:\\Z_GIT\\HispanoBuilder\\WorkForce.WEB\\WorkForce.WEB.csproj",
         "projectName": "WorkForce.WEB",
-        "projectPath": "C:\\ProjectsNet9\\WorkForce\\WorkForce.WEB\\WorkForce.WEB.csproj",
+        "projectPath": "E:\\Z_GIT\\HispanoBuilder\\WorkForce.WEB\\WorkForce.WEB.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "C:\\ProjectsNet9\\WorkForce\\WorkForce.WEB\\obj\\",
+        "outputPath": "E:\\Z_GIT\\HispanoBuilder\\WorkForce.WEB\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

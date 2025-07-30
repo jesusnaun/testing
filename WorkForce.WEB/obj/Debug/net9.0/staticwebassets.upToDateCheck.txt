@@ -1,3 +1,4 @@
+wwwroot\css\app.css
 wwwroot\css\input.css
 wwwroot\icon-192.png
 wwwroot\images\banner-contractors.jpg
@@ -21,9 +22,8 @@ wwwroot\images\welders-trade.jpg
 wwwroot\index.html
 wwwroot\js\carousel.js
 wwwroot\js\login-interop.js
-wwwroot\css\app.css
-C:\ProjectsNet9\WorkForce\WorkForce.WEB\wwwroot\css\input.css
-C:\ProjectsNet9\WorkForce\WorkForce.WEB\wwwroot\index.html
-C:\ProjectsNet9\WorkForce\WorkForce.WEB\wwwroot\js\carousel.js
-C:\ProjectsNet9\WorkForce\WorkForce.WEB\wwwroot\js\login-interop.js
-C:\ProjectsNet9\WorkForce\WorkForce.WEB\wwwroot\css\app.css
+E:\Z_GIT\HispanoBuilder\WorkForce.WEB\wwwroot\css\app.css
+E:\Z_GIT\HispanoBuilder\WorkForce.WEB\wwwroot\css\input.css
+E:\Z_GIT\HispanoBuilder\WorkForce.WEB\wwwroot\index.html
+E:\Z_GIT\HispanoBuilder\WorkForce.WEB\wwwroot\js\carousel.js
+E:\Z_GIT\HispanoBuilder\WorkForce.WEB\wwwroot\js\login-interop.js
