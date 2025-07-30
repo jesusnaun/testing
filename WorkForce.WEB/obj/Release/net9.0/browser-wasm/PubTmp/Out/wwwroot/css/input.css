@@ -1,0 +1,360 @@
+﻿@import "tailwindcss";
+
+@theme {
+    --color-header-bg: #414e5c;
+    --color-header-border: #e5e5e5;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-primary: orange;
+    --color-link-hover: #007bff;
+    --color-intranet: #007bff;
+    --color-intranet-hover: #0056b3;
+    --color-social-hover-bg: #222;
+    --color-overlay-dark: rgba(0, 0, 0, 0.6);
+    --color-bg-white-20: rgba(255, 255, 255, 0.2);
+    --color-arrow-bg: rgba(0, 0, 0, 0.5);
+    --color-dot-bg: rgba(255, 255, 255, 0.5);
+    --color-dot-active: rgba(255, 255, 255, 1);
+    --color-footer-bg: #2c363f;
+}
+
+
+
+
+
+
+
+/*==================================================================
+  Header
+==================================================================*/
+/* Contenedor principal */
+/* ------------------- site-header y LEFT no cambian ------------------- */
+.site-header {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: var(--color-header-bg);
+    border-bottom: 1px solid var(--color-header-border);
+    height: 100px;
+    justify-content: space-between;
+}
+
+.logo-img {
+    max-height: 90px; /* mantiene la proporción original */
+    width: auto;
+    object-fit: contain;
+}
+
+.header-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.contact-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--color-white);
+}
+
+    .contact-item i {
+        margin-right: 0.5rem;
+    }
+
+.social-horizontal {
+    display: flex;
+    gap: 0.3rem;
+    margin-top: 0.25rem;
+}
+
+    .social-horizontal a {
+        color: var(--color-white);
+        background-color: var(--color-black);
+        font-size: 0.8rem;
+        padding: 0;
+        border-radius: 4px;
+        transition: background-color 0.2s, color 0.2s;
+    }
+
+        .social-horizontal a:hover {
+            color: var(--color-white);
+            background-color: var(--color-social-hover-bg);
+        }
+
+
+
+/* 2. Contenedor derecho: nav + botones */
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    padding-left: 500px;
+    padding-right: 40px;
+}
+
+/* 2. Asegura que ambos bloques estén alineados */
+.header-left,
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* 3. Top-nav horizontal */
+.top-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav li {
+    display: inline-block;
+    margin-left: 1.25rem; /* separa cada ítem */
+}
+
+    .top-nav li:first-child {
+        margin-left: 0;
+    }
+
+.top-nav a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.25rem 0;
+    transition: color 0.2s;
+}
+
+    .top-nav a:hover {
+        color: var(--color-primary);
+    }
+
+.top-nav .active a {
+    color: var(--color-primary);
+}
+
+
+/* Hidden by default en desktop */
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+    padding: 0.5rem;
+    margin-left: 1rem;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display: block;
+    background-color: var(--color-white);
+    height: 2px;
+    width: 24px;
+    border-radius: 1px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+    .hamburger::before,
+    .hamburger::after {
+        content: "";
+        position: absolute;
+        left: 0;
+    }
+
+    .hamburger::before {
+        top: -6px;
+    }
+
+    .hamburger::after {
+        top: 6px;
+    }
+
+/* Cuando el header tenga la clase .open, rotamos líneas para icono “X” */
+.site-header.open .hamburger {
+    background-color: transparent;
+}
+
+    .site-header.open .hamburger::before {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .site-header.open .hamburger::after {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+
+/* Punto de quiebre para tablets y pantallas medias */
+@media (max-width: 1024px) {
+    .site-header {
+        position: relative;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .header-left {
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    /* Mostrar botón móvil */
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-right {
+        position: absolute;
+        top: 100%; /* justo debajo de .site-header */
+        left: 0;
+        width: 100%;
+        background: var(--color-header-bg);
+        border-top: 1px solid var(--color-header-border);
+        display: none; /* oculto hasta toggle */
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+        z-index: 50;
+    }
+
+    /* Mostrar header-right e intranet-btn cuando open */
+    .site-header.open .header-right,
+    .site-header.open .intranet-btn {
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    /* Ajustes internos de header-right */
+    .header-right .top-nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .header-right .top-nav li {
+        margin: 0.5rem 0;
+    }
+
+    .header-right .action-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Punto de quiebre para móviles pequeños */
+@media (max-width: 480px) {
+    .logo-img {
+        max-height: 70px;
+    }
+
+    .contact-vertical {
+        display: none; /* ocultar contacto si falta espacio */
+    }
+
+    .top-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .top-nav li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+}
+
+
+
+
+/*==================================================================
+  Footer
+==================================================================*/
+.site-footer {
+    width: 100%;
+    background: var(--color-footer-bg); /* Assuming these are CSS variables defined elsewhere or through @theme */
+    color: var(--color-white);
+    padding: 1.6rem 0;
+    flex-shrink: 0; /* no colapsa en flex container */
+}
+
+/* 3) Centrado y distribución interna */
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* 4) Enlaces y redes sociales */
+.footer-nav a,
+.footer-social a {
+    color: var(--color-white);
+    text-decoration: none;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+}
+
+    .footer-nav a:last-child,
+    .footer-social a:last-child {
+        margin-right: 0;
+    }
+
+/* 5) Texto de copyright */
+.site-footer p {
+    width: 100%;
+    text-align: center;
+    font-size: 0.85rem;
+    margin: 0.75rem 0 0;
+}
+
+
+@media (max-width: 768px) {
+    /* Contenedor principal pasa a columna y centra todo */
+    .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    /* Navegación apilada y centrada */
+    .footer-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+        .footer-nav a {
+            margin: 0; /* eliminar márgenes laterales */
+        }
+
+    /* Redes sociales con espacio uniforme */
+    .footer-social {
+        display: flex;
+        gap: 0.75rem;
+    }
+
+    /* Copyright al fondo con margen superior */
+    .site-footer p {
+        margin-top: 1rem;
+        width: 100%;
+    }
+}

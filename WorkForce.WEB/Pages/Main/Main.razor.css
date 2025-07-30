@@ -1,0 +1,427 @@
+﻿.main-wrapper {
+   /* --color-header-bg: #414e5c;
+    --color-header-border: #e5e5e5;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-primary: orange;
+    --color-link-hover: #007bff;
+    --color-intranet: #007bff;
+    --color-intranet-hover: #0056b3;
+    --color-social-hover-bg: #222;
+    --color-overlay-dark: rgba(0, 0, 0, 0.6);
+    --color-bg-white-20: rgba(255, 255, 255, 0.2);
+    --color-arrow-bg: rgba(0, 0, 0, 0.5);
+    --color-dot-bg: rgba(255, 255, 255, 0.5);
+    --color-dot-active: rgba(255, 255, 255, 1);
+    --color-footer-bg: #2c363f;*/
+    /* Contenedor principal que ocupa toda la pantalla */
+    
+    /*margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif; 
+    background-color: rgba(255, 255, 255, 0.2);*/
+    /* Contenedor central */
+}
+
+
+
+
+
+/*==================================================================
+  Contenedores generales
+==================================================================*/
+/* Contenedor central */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+
+
+/*==================================================================
+  Banner / Slider
+==================================================================*/
+/* Banner container */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+}
+
+/* Slider wrapper */
+.banner-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Cada imagen: apilada y con transición */
+.banner-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+    /* Imagen activa con opacidad para mostrar el título */
+    .banner-img.active {
+        opacity: 0.5;
+    }
+
+/* Flechas */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--color-arrow-bg);
+    border: none;
+    color: var(--color-white);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 5;
+}
+
+    .arrow.left {
+        left: 1rem;
+    }
+
+    .arrow.right {
+        right: 1rem;
+    }
+
+/* Dots (indicadores) */
+.indicators {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 5;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: var(--color-dot-bg);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+    .dot.active {
+        background: var(--color-dot-active);
+    }
+
+/* Posiciona el overlay en el filo inferior */
+.banner-overlay {
+    position: absolute;
+    left: 490px;
+    bottom: 1.5rem;
+    transform: none;
+    z-index: 5;
+}
+
+    /* Título principal */
+    .banner-overlay h1 {
+        margin: 0;
+        font-size: 3.5rem;
+        color: var(--color-primary);
+    }
+
+    /* Subtítulo */
+    .banner-overlay h2 {
+        margin: 0.25rem 0 0.75rem;
+        font-size: 2rem;
+        color: var(--color-black);
+    }
+
+@media (max-width: 768px) {
+    /* Centrar y apilar el overlay */
+    .banner-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+        /* Ajuste de tipografía para móviles */
+        .banner-overlay h1 {
+            font-size: clamp(3rem, 6vw, 2rem);
+            margin: 0;
+        }
+
+        .banner-overlay h2 {
+            font-size: clamp(1.5rem, 4vw, 1.5rem);
+            margin: 0;
+        }
+
+    .banner-slider {
+        position: relative;
+        overflow: hidden; /* si quieres ocultar partes de la imagen */
+    }
+
+    /* Estilos comunes de las flechas en móvil */
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px; /* hit area táctil más grande */
+        height: 40px;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10; /* por encima del overlay */
+        pointer-events: auto;
+    }
+
+        .arrow.left {
+            left: 0.5rem; /* separada del borde izquierdo */
+        }
+
+        .arrow.right {
+            right: 0.5rem; /* separada del borde derecho */
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*==================================================================
+  Job-Search Section
+==================================================================*/
+.job-search {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    /*height: auto;
+     min-height: 300px;*/
+    overflow: hidden;
+    margin-top: 9px;
+    margin-bottom: 1px;
+    
+}
+
+.bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-overlay-dark);
+}
+
+.search-title {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: center;
+    color: var(--color-white);
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Contenedor de botones */
+.job-options {
+    position: relative;
+    z-index: 1; /* que queden sobre el overlay */
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* separación entre botones */
+    margin: 50px auto; /* espacio arriba y abajo */
+}
+
+    /* Botones con fondo semitransparente y blur */
+    .job-options button {
+        background: var(--color-bg-white-20);
+        backdrop-filter: blur(8px);
+        border: none;
+        color: var(--color-primary);
+        padding: 12px 24px;
+        font-size: 2rem;
+        border-radius: 100px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+        width: 250px;
+    }
+
+        .job-options button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1) translateY(-2px);
+        }
+
+
+
+
+
+@media (max-width: 768px) {
+    /* Ajustes generales de la sección */
+    .job-search {
+        height: auto; /* que la sección se adapte al contenido */
+        padding: 40px 0; /* espacio arriba y abajo */
+    }
+
+    .job-options {
+        flex-direction: column;
+        gap: 12px;
+        padding: 0 20px;
+    }
+
+        .job-options button {
+            width: 100%;
+            text-align: center;
+            font-size: 2rem;
+        }
+}
+
+
+
+
+
+
+/*==================================================================
+  Text Section
+==================================================================*/
+.parrafos-section {
+    display: flex;
+    align-items: center; /* centra verticalmente el contenido dentro de la sección */
+    gap: 2rem;
+    width: 90%;
+    max-width: 1000px;
+    margin: 4rem auto 0; /* separa de la sección anterior y centra horizontalmente */
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.textos {
+    flex: 1;
+}
+
+    .textos p {
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+.imagen-hover {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+    .imagen-hover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .imagen-hover .overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0,0,0,0.6);
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: bold;
+        transition: opacity 0.3s ease;
+    }
+
+    .imagen-hover:hover img {
+        transform: scale(1.05);
+    }
+
+    .imagen-hover:hover .overlay {
+        opacity: 1;
+    }
+
+/* Responsive para tablets y móviles grandes */
+@media screen and (max-width: 768px) {
+    .parrafos-section {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 2rem auto;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .textos {
+        width: 100%;
+    }
+
+    .imagen-hover {
+        width: 100%;
+        aspect-ratio: 1/1;
+        height: auto;
+    }
+
+        .imagen-hover .overlay {
+            font-size: 1.3rem;
+        }
+}
+
+/* Ajustes para móviles muy pequeños */
+@media screen and (max-width: 480px) {
+    .parrafos-section {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .textos p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .imagen-hover .overlay {
+        font-size: 1.1rem;
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+﻿@page "/TradesPeople"
+@inject IJSRuntime JSRuntime
+@inject NavigationManager Navigation
+
+<div class="contractor-wrapper">
+
+
+    <section class="banner-section">
+        <img src="images/banner-contractors.jpg"
+             alt="Banner Contractors"
+             class="banner-bg" />
+
+        <div class="banner-overlay"></div>
+
+        <div class="banner-content">
+            <h1 class="banner-title">TradesPeople</h1>
+            <p class="banner-subtitle">“Architecture designed for you, built with passion and precision.”</p>
+        </div>
+    </section>
+
+    <!-- 1. Estructura HTML -->
+    <section class="parrafos-section">
+        <div class="textos">
+            <h2 class="parrafos-subtitle">Committed to Quality and Sustainability</h2>
+            <p>With over fifteen years of proven excellence, Hispano Builders delivers construction solutions that blend reliability and environmental consciousness. Our team approaches every project—residential or commercial—with adaptability and precision, ensuring outcomes that reflect both structural integrity and aesthetic value.</p>
+            <p>Thanks to strategic alliances with local suppliers and the use of high-quality materials, Hispano Builders optimizes costs without sacrificing durability or aesthetics...</p>
+        </div>
+
+        <div class="imagen-hover">
+            <img src="images/parrafo-contractors.jpg" alt="Team of contractors at work" />
+            <div class="overlay">
+                <i class="fas fa-hard-hat"></i>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="parajeshu-form-section">
+        <form class="parajeshu-form" action="#" method="post">
+            <div class="parajeshu-form-group">
+                <label class="parajeshu-label" for="name">Full name</label>
+                <input class="parajeshu-input"
+                       type="text"
+                       id="name"
+                       name="name"
+                       required
+                       placeholder="Enter your name">
+            </div>
+
+            <div class="parajeshu-form-group">
+                <label class="parajeshu-label" for="email">Email</label>
+                <input class="parajeshu-input"
+                       type="email"
+                       id="email"
+                       name="email"
+                       required
+                       placeholder="name@example.com">
+            </div>
+
+            <div class="parajeshu-form-group">
+                <label class="parajeshu-label" for="website">Contractor's website</label>
+                <input class="parajeshu-input"
+                       type="url"
+                       id="website"
+                       name="website"
+                       placeholder="https://tusitio.com">
+            </div>
+
+            <div class="parajeshu-form-group">
+                <label class="parajeshu-label" for="message">Message</label>
+                <textarea class="parajeshu-input"
+                          id="message"
+                          name="message"
+                          rows="4"
+                          placeholder="How can we help you?"></textarea>
+            </div>
+
+            <button class="parajeshu-button" type="submit">Send</button>
+        </form>
+    </section>
+
+</div>
+
+@code {
+
+}

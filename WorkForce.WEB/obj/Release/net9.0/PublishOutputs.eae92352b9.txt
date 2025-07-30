@@ -1,0 +1,2 @@
+C:\ProjectsNet9\WorkForce\WorkForce.WEB\obj\Release\net9.0\browser-wasm\PubTmp\Out\package-lock.json
+C:\ProjectsNet9\WorkForce\WorkForce.WEB\obj\Release\net9.0\browser-wasm\PubTmp\Out\web.config

@@ -1,0 +1,34 @@
+﻿<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+       @*  <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <p role="alert">Sorry, there's nothing at this address.</p>
+        </LayoutView> *@
+        <LayoutView Layout="@typeof(MainLayout)">
+            <div class="redirect-container">
+                <p>Redirigiendo a la página principal...</p>
+            </div>
+            @{
+                // Redirección para rutas no encontradas
+                NavigationManager.NavigateTo("/Main");
+            }
+        </LayoutView>
+    </NotFound>
+</Router>
+
+@code {
+    [Inject] private NavigationManager NavigationManager { get; set; }
+
+    protected override void OnInitialized()
+    {
+        // Redirige la raíz a /Main
+        if (NavigationManager.Uri.EndsWith("/"))
+        {
+            NavigationManager.NavigateTo("/Main");
+        }
+    }
+}

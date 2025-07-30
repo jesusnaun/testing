@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "WorkForce.API\\WorkForce.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "WorkForce.WEB\\WorkForce.WEB.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

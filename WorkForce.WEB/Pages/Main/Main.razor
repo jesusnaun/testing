@@ -1,0 +1,124 @@
+﻿@page "/Main"
+@inject IJSRuntime JSRuntime
+@inject NavigationManager Navigation
+
+<div class="main-wrapper">
+
+
+@* 
+        <button @onclick="NavigateToLogin"
+                class="ml-6 bg-blue-700 text-white flex items-center space-x-2 py-2 px-4 rounded text-sm no-underline transition-colors duration-200 hover:bg-blue-800">
+            <i class="fas fa-lock text-sm"></i>
+            <span>Intranet</span>
+        </button> *@
+
+
+   
+    <!-- Banner Slider -->
+    <section id="mainBanner" class="banner">
+        <div class="banner-slider">
+            <!-- Imagen 1 -->
+            <img src="images/banner-principal-main.jpg"
+                 alt="Banner 1"
+                 class="banner-img active" />
+            <!-- Imagen 2 -->
+            <img src="images/banner2-principal-main.jpg"
+                 alt="Banner 2"
+                 class="banner-img" />
+
+            <!-- Flechas -->
+            <button class="arrow left">&#10094;</button>
+            <button class="arrow right">&#10095;</button>
+
+            <!-- Indicadores (dots) -->
+            <div class="indicators">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+            </div>
+
+            <!-- Overlay de texto y botones -->
+            <div class="banner-overlay">
+                <h1>Your Partner In Finding</h1>
+                <h2>Skilled Construction Talent</h2>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="job-search">
+        <img src="images/banner-secundario-main.png" alt="Construction Site" class="bg-img" />
+        <div class="bg-overlay"></div>
+
+        <h2 class="search-title">Search For Available Construction Jobs</h2>
+
+        <div class="search-container">
+            <!-- Contenedor de botones opcionales -->
+            <div class="job-options">
+                <button type="button" @onclick="ToContractor">Contractors</button>
+                <button type="button" @onclick="ToTradesPeople">TradesPeople</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 1. Estructura HTML -->
+    <section class="parrafos-section">
+        <div class="textos">
+            <p>Hispano Builders is a contracting company with over fifteen years of experience in the construction sector, characterized by its ability to adapt to both residential and commercial projects of varying sizes. Its multidisciplinary team, comprised of architects, civil engineers, and experts in traditional trades—precision carpentry, masonry, electrical installations, and plumbing—is coordinated under a comprehensive management model that guarantees the completion of each phase of the project, from design conception to turnkey delivery.</p>
+            <p>Thanks to strategic alliances with local suppliers and the use of high-quality materials, Hispano Builders optimizes costs without sacrificing durability or aesthetics, incorporating sustainable construction techniques such as renewable energy and water-efficient systems. Furthermore, its attention to detail is reflected in the ongoing supervision of each project, through photographic reports and periodic quality control visits, ensuring the client a transparent process aligned with agreed-upon deadlines.</p>
+        </div>
+
+        <div class="imagen-hover">
+            <img src="images/parrafo-contractors.jpg" alt="Descripción de la imagen">
+            <div class="overlay">
+                <span>Contractors</span>
+            </div>
+        </div>
+    </section>
+
+
+
+</div>
+
+@code {
+    private string MyInputValue { get; set; } = "";
+    private string? SelectedState { get; set; }
+
+    //PARA EL CARRUSEL JS
+    private IJSObjectReference? _carouselModule;
+    private string CarouselContainerId = "mainBanner"; // Use the ID of your <section> tag
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Call your JavaScript function to initialize the carousel
+            _carouselModule = await JSRuntime.InvokeAsync<IJSObjectReference>("myApp.initCarousel", CarouselContainerId);
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (_carouselModule != null)
+        {
+            await _carouselModule.InvokeVoidAsync("dispose");
+            await _carouselModule.DisposeAsync();
+        }
+    }
+
+
+    private void ToContractor()
+    {
+        Navigation.NavigateTo("/Contractor");
+    }
+
+    private void ToTradesPeople()
+    {
+        Navigation.NavigateTo("/TradesPeople");
+    }
+
+    // private void NavigateToLogin()
+    // {
+    //     Navigation.NavigateTo("/login");
+    // }
+}

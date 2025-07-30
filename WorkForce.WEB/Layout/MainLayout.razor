@@ -1,0 +1,92 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+
+
+<header class="site-header @(isMenuOpen ? "open" : "")">
+    <!-- Lado Izquierdo sin cambios -->
+    <div class="header-left">
+        <a href="main.html">
+            <img src="images/icono-color-horizontal.png" alt="Logo" class="logo-img" />
+        </a>
+        <!-- Botón de menú móvil -->
+        @* <button class="menu-toggle" aria-label="Abrir menú"> *@
+            <button class="menu-toggle" @onclick="ToggleMenu" aria-expanded="@isMenuOpen" aria-label="Abrir menú">
+            <span class="hamburger"></span>
+        </button>
+        <div class="contact-vertical">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>800-349-3279</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>info@hispanobuilders.com</span>
+            </div>
+            <div class="social-horizontal">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-x"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-right">
+        <nav class="top-nav">
+            <ul>
+                @* <li class="@IsActive("Main")"><a href="Main">Home</a></li> *@
+
+                <li class="@IsActive("Main")"><NavLink href="Main" Match="NavLinkMatch.All" @onclick="() => CloseMenu()">Home</NavLink></li>
+                <li class="@IsActive("Contractor")"><NavLink href="Contractor" Match="NavLinkMatch.All" @onclick="() => CloseMenu()">Contractor</NavLink></li>
+                <li class="@IsActive("Tradespeople")"><NavLink href="Tradespeople" Match="NavLinkMatch.All" @onclick="() => CloseMenu()">Tradespeople</NavLink></li>
+                <li class="@IsActive("Trades")"><NavLink href="Trades" Match="NavLinkMatch.All" @onclick="() => CloseMenu()">Trades</NavLink></li>
+                <li class="@IsActive("Locations")"><NavLink href="Locations" Match="NavLinkMatch.All" @onclick="() => CloseMenu()">Locations</NavLink></li>
+                <li class="@IsActive("About")"><NavLink href="About" Match="NavLinkMatch.All" @onclick="() => CloseMenu()">About</NavLink></li>
+
+               @*  <li class="@IsActive("Contractor")"><a href="Contractor">Contractors</a></li> 
+                <li class="@IsActive("Tradespeople")"><a href="Tradespeople">TradesPeople</a></li>
+                <li class="@IsActive("Trades")"><a href="Trades">Trades</a></li>
+                <li class="@IsActive("Locations")"><a href="Locations">Locations</a></li>
+                <li class="@IsActive("About")"><a href="About">About</a></li>*@
+            </ul>
+        </nav>
+    </div>
+</header>
+
+@Body
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <nav class="footer-nav">
+            <a href="Main">Home</a>
+            <a href="Contractor">Contractors</a>
+            <a href="Tradespeople">TradesPeople</a>
+            <a href="Trades">Trades</a>
+            <a href="Locations">Locations</a>
+            <a href="About">About</a>
+        </nav>
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-x"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>©2025 HispanoBuilders, Inc.</p>
+    </div>
+</footer>
+
+
+@code{
+    private bool isMenuOpen = false;
+    
+    private void ToggleMenu() => isMenuOpen = !isMenuOpen;
+    private void CloseMenu() => isMenuOpen = false;
+
+    private string IsActive(string path)
+    {
+        var currentPath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        var currentSegments = currentPath.Split('/');
+        var targetSegments = path.Split('/');
+    
+        return currentSegments[0] == targetSegments[0] ? "active" : "";
+    }
+}
+            

@@ -1,0 +1,2 @@
+C:\ProjectsNet9\WorkForce\WorkForce.WEB\wwwroot\js\login.js
+C:\ProjectsNet9\WorkForce\WorkForce.WEB\wwwroot\js\main.js

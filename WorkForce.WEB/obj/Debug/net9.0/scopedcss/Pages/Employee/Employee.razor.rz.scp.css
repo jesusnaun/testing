@@ -1,0 +1,302 @@
+.contractor-wrapper[b-33c37yvzrr] {
+    /* Contenedor principal que ocupa toda la pantalla */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* elimina cualquier scroll horizontal */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif; /* permite empujar el footer al fondo */
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Contenedor central */
+}
+
+
+
+/*==================================================================
+  Contenedores generales
+==================================================================*/
+/* Contenedor central */
+.container[b-33c37yvzrr] {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+
+
+
+
+
+
+
+
+.banner-section[b-33c37yvzrr] {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2rem;
+}
+
+.banner-bg[b-33c37yvzrr] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(40%); /* Oscurece la imagen */
+    z-index: 0;
+}
+
+.banner-overlay[b-33c37yvzrr] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.banner-content[b-33c37yvzrr] {
+    position: relative;
+    z-index: 2;
+    color: var(--color-white);
+    text-align: left;
+    left: 200px;
+    top: 20px;
+}
+
+.banner-title[b-33c37yvzrr] {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.banner-subtitle[b-33c37yvzrr] {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--color-primary);
+}
+
+@media (max-width: 600px) {
+    .banner-section[b-33c37yvzrr] {
+        height: 300px;
+        padding: 1rem;
+        width: auto;
+        display: flex;
+        align-items: center; /* Centra verticalmente */
+        justify-content: center; /* Centra horizontalmente */
+    }
+
+    .banner-content[b-33c37yvzrr] {
+        position: relative;
+        text-align: center;
+        left: 0;
+        top: 0;
+    }
+
+    .banner-title[b-33c37yvzrr] {
+        font-size: 2rem;
+    }
+
+    .banner-subtitle[b-33c37yvzrr] {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
+
+.parrafos-section[b-33c37yvzrr] {
+    display: flex;
+    align-items: center; /* centra verticalmente el contenido dentro de la sección */
+    gap: 2rem;
+    width: 90%;
+    max-width: 1000px;
+    margin: 4rem auto 0; /* separa de la sección anterior y centra horizontalmente */
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+/* Estilo para el subtítulo */
+.parrafos-subtitle[b-33c37yvzrr] {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--color-black);
+}
+
+.overlay i[b-33c37yvzrr] {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+
+.textos[b-33c37yvzrr] {
+    flex: 1;
+}
+
+    .textos p[b-33c37yvzrr] {
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+.imagen-hover[b-33c37yvzrr] {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+    .imagen-hover img[b-33c37yvzrr] {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .imagen-hover .overlay[b-33c37yvzrr] {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0,0,0,0.6);
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-white);
+        font-size: 1.5rem;
+        font-weight: bold;
+        transition: opacity 0.3s ease;
+    }
+
+    .imagen-hover:hover img[b-33c37yvzrr] {
+        transform: scale(1.2);
+    }
+
+    .imagen-hover:hover .overlay[b-33c37yvzrr] {
+        opacity: 1;
+    }
+
+/* Responsive para tablets y móviles grandes */
+@media screen and (max-width: 768px) {
+    .parrafos-section[b-33c37yvzrr] {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 2rem auto;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .textos[b-33c37yvzrr] {
+        width: 100%;
+    }
+
+    .imagen-hover[b-33c37yvzrr] {
+        width: 100%;
+        aspect-ratio: 1/1;
+        height: auto;
+    }
+
+        .imagen-hover .overlay[b-33c37yvzrr] {
+            font-size: 1.3rem;
+        }
+}
+
+/* Ajustes para móviles muy pequeños */
+@media screen and (max-width: 480px) {
+    .parrafos-section[b-33c37yvzrr] {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .textos p[b-33c37yvzrr] {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .imagen-hover .overlay[b-33c37yvzrr] {
+        font-size: 1.1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.parajeshu-form-section[b-33c37yvzrr] {
+    width: 90%;
+    max-width: 600px;
+    margin: 4rem auto 2rem;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.parajeshu-form[b-33c37yvzrr] {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.parajeshu-form-group[b-33c37yvzrr] {
+    display: flex;
+    flex-direction: column;
+}
+
+.parajeshu-label[b-33c37yvzrr] {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.parajeshu-input[b-33c37yvzrr] {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .parajeshu-input:focus[b-33c37yvzrr] {
+        border-color: #0066cc;
+        box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.2);
+        outline: none;
+    }
+
+.parajeshu-button[b-33c37yvzrr] {
+    align-self: flex-end;
+    padding: 0.75rem 2rem;
+    background-color: #0066cc;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .parajeshu-button:hover[b-33c37yvzrr] {
+        background-color: #004999;
+        transform: translateY(-2px);
+    }

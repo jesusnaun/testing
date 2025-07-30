@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36301.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkForce.API", "WorkForce.API\WorkForce.API.csproj", "{BAEE31BE-A3BA-4D82-964F-5E261DDD1C15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkForce.WEB", "WorkForce.WEB\WorkForce.WEB.csproj", "{10ABDE6B-FD12-49EF-B9AB-F02D2B832CFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAEE31BE-A3BA-4D82-964F-5E261DDD1C15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAEE31BE-A3BA-4D82-964F-5E261DDD1C15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAEE31BE-A3BA-4D82-964F-5E261DDD1C15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAEE31BE-A3BA-4D82-964F-5E261DDD1C15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10ABDE6B-FD12-49EF-B9AB-F02D2B832CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10ABDE6B-FD12-49EF-B9AB-F02D2B832CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10ABDE6B-FD12-49EF-B9AB-F02D2B832CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10ABDE6B-FD12-49EF-B9AB-F02D2B832CFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7FD1E4BD-DABA-4D91-BB8E-98849B20F2A7}
+	EndGlobalSection
+EndGlobal

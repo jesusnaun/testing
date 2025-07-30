@@ -1,0 +1,250 @@
+/* Variables CSS locales para el componente */
+.login-wrapper[b-dztqec95zp] {
+    --font: 'Poppins', sans-serif;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-primary: orange;
+    --color-secondary: #414e5c;
+    --glass-bg: rgba(255,255,255,0.15);
+    --glass-border: rgba(255,255,255,0.3);
+    --duration: 0.3s;
+    /* Contenedor principal que ocupa toda la pantalla */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+    height: 100vh;
+    background: var(--color-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fondo plano */
+.background[b-dztqec95zp] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--color-secondary);
+    z-index: -1;
+}
+
+/* Centrado de todo */
+.login-container[b-dztqec95zp] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+/* Panel con imagen de fondo */
+.login-panel[b-dztqec95zp] {
+    width: 900px;
+    height: 550px;
+    background: url(../images/banner-secundario-main.png) center/cover no-repeat;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    position: relative;
+    padding: 1.5rem;
+}
+
+/* Icono para volver */
+.back-home[b-dztqec95zp] {
+    position: relative;
+    top: 1rem;
+    left: 1rem;
+    font-size: 2rem;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: color var(--duration);
+}
+
+    .back-home .tooltip[b-dztqec95zp] {
+        position: absolute;
+        bottom: 100%; /* sobre el icono */
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 0.5rem;
+        background: var(--color-black);
+        color: var(--color-white);
+        padding: 0.3rem 0.6rem;
+        border-radius: 0.3rem;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity var(--duration);
+    }
+
+    .back-home:hover .tooltip[b-dztqec95zp],
+    .back-home:focus .tooltip[b-dztqec95zp] {
+        opacity: 1;
+    }
+
+    .back-home:hover[b-dztqec95zp] {
+        color: var(--color-primary);
+    }
+
+/* Contenido interior: imagen y caja */
+.panel-content[b-dztqec95zp] {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Imagen lateral */
+.side-image img[b-dztqec95zp] {
+    max-width: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Caja glassmorphism donde va el formulario */
+.login-box[b-dztqec95zp] {
+    flex: 1;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    width: 400px;
+    justify-content: center;
+    margin-left: 230px;
+    margin-top: -10px;
+    align-items: center;
+}
+
+/* Logo de la empresa encima de "Iniciar Sesión" */
+.company-logo-container[b-dztqec95zp] {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+    .company-logo-container img[b-dztqec95zp] {
+        height: 60px;
+        width: auto;
+    }
+
+.login-form[b-dztqec95zp] {
+    text-align: center;
+}
+
+    /* Título */
+    .login-form h2[b-dztqec95zp] {
+        text-align: center;
+        color: var(--color-white);
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+        justify-content: center;
+    }
+
+
+/* Inputs y labels flotantes */
+.input-group[b-dztqec95zp] {
+    position: relative;
+    margin-bottom: 1.8rem;
+    padding-top: 1.2rem;
+}
+
+    .input-group input[b-dztqec95zp] {
+        width: 100%;
+        padding: 0.8rem 0.5rem;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid rgba(255,255,255,0.6);
+        color: var(--color-white);
+        font-size: 1rem;
+        transition: border-color var(--duration);
+    }
+
+        .input-group input:focus[b-dztqec95zp] {
+            outline: none;
+            border-bottom-color: var(--color-primary);
+        }
+
+    .input-group label[b-dztqec95zp] {
+        position: absolute;
+        left: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(255,255,255,0.7);
+        font-size: 1rem;
+        pointer-events: none;
+        transition: top var(--duration), transform var(--duration), font-size var(--duration), color var(--duration);
+    }
+
+    .input-group.active label[b-dztqec95zp] {
+        top: -0.8rem;
+        transform: translateY(0);
+        font-size: 0.8rem;
+        color: var(--color-primary);
+    }
+
+/* Toggle ojo */
+.toggle-password[b-dztqec95zp] {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: rgba(255,255,255,0.7);
+    transition: color var(--duration);
+}
+
+    .toggle-password:hover[b-dztqec95zp] {
+        color: var(--color-primary);
+    }
+
+/* Botón y ripple */
+.btn[b-dztqec95zp] {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background var(--duration), transform var(--duration);
+}
+
+    .btn:hover[b-dztqec95zp] {
+        transform: scale(1.05);
+        background: darkorange;
+    }
+
+.ripple[b-dztqec95zp] {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.7);
+    animation: rippleEffect-b-dztqec95zp 0.6s linear;
+}
+
+@keyframes rippleEffect-b-dztqec95zp {
+    from {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+
+
+/* Ocultar el icono de "mostrar contraseña" del navegador */
+input[type="password"][b-dztqec95zp]::-ms-reveal,
+input[type="password"][b-dztqec95zp]::-ms-clear {
+    display: none;
+}
+
+input[type="password"][b-dztqec95zp]::-webkit-reveal,
+input[type="password"][b-dztqec95zp]::-webkit-clear-button {
+    display: none !important; /* !important es a menudo necesario para Webkit */
+    -webkit-appearance: none; /* También ayuda a eliminar el estilo nativo */
+}

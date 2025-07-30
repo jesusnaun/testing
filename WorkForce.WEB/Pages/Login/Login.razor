@@ -1,0 +1,168 @@
+﻿@page "/Login"
+@inject AuthService Auth 
+@inject NavigationManager Nav
+@inject IJSRuntime JSRuntime
+
+
+<div class="login-wrapper">
+
+    
+    <div class="background"></div>
+
+    <div class="login-container">
+        <!-- Panel grande con fondo -->
+        <div class="login-panel">
+            <!-- Icono de casa -->
+           <a @onclick:preventDefault @onclick="NavigateToMain"
+                           class="back-home">
+                <i class="fa-solid fa-house"></i>
+                <span class="tooltip">Return to main page</span>
+            </a>
+
+            <!-- Caja de login -->
+            <div class="login-box">
+                <EditForm Model="loginModel" OnValidSubmit="HandleLogin" id="loginForm" class="text-center">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                 
+                    <!-- Logo de la empresa -->
+                    <div class="text-center mb-4">
+                        <img src="images/icono-color-vertical.png" alt="Logo Empresa" class="h-[65px] w-auto mx-auto block" />
+                    </div>
+
+                    <h2 class="text-center text-white font-bold text-3xl
+mb-6 font-medium ">Log In</h2>
+
+
+                    <div id="email-input-group" class="input-group">
+                           <InputText id="email" @bind-Value="loginModel.Username"
+                                   class="w-full py-3.5 px-2 bg-transparent border-b-2 border-white/60 text-white text-base transition-colors duration-300 focus:outline-none focus:border-orange-500">
+                               </InputText>
+                        <label for="email">User</label>
+                    </div>
+
+                    <div id="password-input-group" class="input-group">
+                        <InputText id="password" @bind-Value="loginModel.Password" type="@passwordInputType"
+                                   class="w-full py-3.5 px-2 bg-transparent border-b-2 border-white/60 text-white text-base transition-colors duration-300 focus:outline-none focus:border-orange-500">
+                               </InputText>
+                       <label for="password">Password</label>
+                        <span class="toggle-password" @onclick="TogglePasswordVisibility">
+                            <i class="@toggleIconClass"></i>
+                       
+                        </span>
+                    </div>
+
+                  
+
+
+
+                    <button type="submit"
+        class="btn @(isLoggingIn ? "opacity-70 cursor-not-allowed" : "")" 
+        disabled="@isLoggingIn">
+     @*    @onclick="HandleLogin">  *@
+
+    @if (isLoggingIn)
+    {
+        <i class="fa-solid fa-spinner fa-spin text-lg"></i> 
+        <span>@buttonText</span> 
+    }
+    else
+    {
+        <span>@buttonText</span> 
+    }
+</button>
+                </EditForm>
+             
+            </div>
+        </div>
+      
+</div>
+</div>
+
+@code {
+
+    private LoginRequest loginModel = new();
+    private string errorMessage = string.Empty;
+
+    private string passwordInputType = "password"; // Controls the input type
+    private string toggleIconClass = "fa-solid fa-eye"; // Controls the icon
+
+    // State variables for button UI
+    private bool isLoggingIn = false;
+    private string buttonText = "Enter";
+
+    // IDs for JS Interop
+    private string emailInputGroupId = "email-input-group";
+    private string passwordInputGroupId = "password-input-group";
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+
+            // Initialize floating labels
+            var inputGroupIds = new List<string> { emailInputGroupId, passwordInputGroupId };
+            await JSRuntime.InvokeVoidAsync("LoginInterop.initFloatingLabels", inputGroupIds);
+        }
+    }
+
+    // --- IAsyncDisposable for JS Cleanup ---
+    public async ValueTask DisposeAsync()
+    {
+        // Dispose JS event listeners when the component is removed from DOM
+        var inputGroupIds = new List<string> { emailInputGroupId, passwordInputGroupId };
+        await JSRuntime.InvokeVoidAsync("LoginInterop.disposeFloatingLabels", inputGroupIds);
+    }
+
+
+
+    // Handles the password eye toggle (Blazor-only)
+    private void TogglePasswordVisibility()
+    {
+        if (passwordInputType == "password")
+        {
+            passwordInputType = "text";
+            toggleIconClass = "fa-solid fa-eye-slash";
+        }
+        else
+        {
+            passwordInputType = "password";
+            toggleIconClass = "fa-solid fa-eye";
+        }
+    }
+
+
+    //CLICK DE INGRESAR
+    private async Task HandleLogin()
+    {
+        isLoggingIn = true;
+        buttonText = "Checking...";
+        StateHasChanged();
+
+        errorMessage = string.Empty;
+        var result = await Auth.LoginAsync(loginModel);
+
+        if (result == "success")
+        {
+            isLoggingIn = false;
+            buttonText = "Enter";
+            StateHasChanged();
+            Nav.NavigateTo("/Home"); // o redirige al dashboard
+        }
+        else
+        {
+            isLoggingIn = false;
+            buttonText = "Enter";
+            StateHasChanged();
+            errorMessage = result;
+        }
+
+
+    }
+
+    //CLICK PARA REGRESAR
+    private void NavigateToMain()
+    {
+        Nav.NavigateTo("/main"); 
+    }
+}
