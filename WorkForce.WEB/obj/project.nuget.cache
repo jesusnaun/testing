@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1X7CxaiPEfE=",
+  "dgSpecHash": "UXkVeS4mA5Y=",
   "success": true,
-  "projectFilePath": "E:\\Z_GIT\\HispanoBuilder\\WorkForce.WEB\\WorkForce.WEB.csproj",
+  "projectFilePath": "E:\\Z_GIT\\HispanoBuilderTesting\\WorkForce.WEB\\WorkForce.WEB.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.aspnetcore.authorization\\9.0.7\\microsoft.aspnetcore.authorization.9.0.7.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.aspnetcore.components\\9.0.7\\microsoft.aspnetcore.components.9.0.7.nupkg.sha512",

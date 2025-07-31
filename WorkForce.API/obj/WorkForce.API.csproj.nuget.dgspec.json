@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Z_GIT\\HispanoBuilder\\WorkForce.API\\WorkForce.API.csproj": {}
+    "E:\\Z_GIT\\HispanoBuilderTesting\\WorkForce.API\\WorkForce.API.csproj": {}
   },
   "projects": {
-    "E:\\Z_GIT\\HispanoBuilder\\WorkForce.API\\WorkForce.API.csproj": {
+    "E:\\Z_GIT\\HispanoBuilderTesting\\WorkForce.API\\WorkForce.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Z_GIT\\HispanoBuilder\\WorkForce.API\\WorkForce.API.csproj",
+        "projectUniqueName": "E:\\Z_GIT\\HispanoBuilderTesting\\WorkForce.API\\WorkForce.API.csproj",
         "projectName": "WorkForce.API",
-        "projectPath": "E:\\Z_GIT\\HispanoBuilder\\WorkForce.API\\WorkForce.API.csproj",
+        "projectPath": "E:\\Z_GIT\\HispanoBuilderTesting\\WorkForce.API\\WorkForce.API.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "E:\\Z_GIT\\HispanoBuilder\\WorkForce.API\\obj\\",
+        "outputPath": "E:\\Z_GIT\\HispanoBuilderTesting\\WorkForce.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
